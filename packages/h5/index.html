@@ -102,11 +102,12 @@
     </div>
 
     <div class="mt-6 text-xs text-gray-500">
-      <p>注：MCI (轻度认知障碍) 风险评估基于多项认知测试指标计算。</p>
-      <p class="mt-1">AACT: α1-抗胰蛋白酶复合物测试</p>
-      <p>MMSE: 简易精神状态检查量表</p>
-      <p>VFT: 语言流畅性测试</p>
-      <p>DPN: 抑郁症状 (有/无)</p>
+      <p>注：本MCI (轻度认知功能障碍) 风险评估模型基于血检验指标、认知测试量表、糖尿病并发症病史等综合进行计算，适用于2型糖尿病人群出现轻度认知功能障碍的风险评估。</p>
+      <p class="mt-2">指标说明：</p>
+      <p class="mt-1">AACT: 抗胰蛋白酶蛋白酶</p>
+      <p>MMSE: 简易智力状态检查量表</p>
+      <p>VFT: 词语流畅性测验量表</p>
+      <p>DPN: 糖尿病性周围神经病</p>
     </div>
   </div>
 
@@ -162,9 +163,9 @@
   }
 
   function resetForm() {
-    document.getElementById('AACT').value = '1.57';
-    document.getElementById('MMSE').value = '28';
-    document.getElementById('VFT').value = '14';
+    document.getElementById('AACT').value = '';
+    document.getElementById('MMSE').value = '';
+    document.getElementById('VFT').value = '';
     document.getElementById('DPN').value = '0';
     document.getElementById('result-container').classList.add('hidden');
   }
