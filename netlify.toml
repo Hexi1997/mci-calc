@@ -1,6 +1,6 @@
 [build]
   base = "packages/h5"
-  command = "pnpm build:h5"
+  command = "pnpm build"
   publish = "dist"
 
 [build.environment]
