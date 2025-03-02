@@ -29,6 +29,24 @@
       color: #b91c1c;
       background-color: #fee2e2;
     }
+    .select-field {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.375rem;
+      background-color: white;
+      transition: border-color 0.15s ease-in-out;
+    }
+    .select-field:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    }
+    .unit-label {
+      color: #6b7280;
+      font-size: 0.875rem;
+      margin-left: 0.25rem;
+    }
   </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
@@ -39,23 +57,26 @@
     <!-- 输入表单 -->
     <div class="space-y-4">
       <div class="input-group">
-        <label class="block text-sm font-medium text-gray-700 mb-1" for="AACT">AACT:</label>
+        <label class="block text-sm font-medium text-gray-700 mb-1" for="AACT">AACT <span class="unit-label">(mg/mL)</span>:</label>
         <input type="number" id="AACT" step="0.01" value="1.57" class="input-field">
       </div>
       
       <div class="input-group">
-        <label class="block text-sm font-medium text-gray-700 mb-1" for="MMSE">MMSE:</label>
+        <label class="block text-sm font-medium text-gray-700 mb-1" for="MMSE">MMSE <span class="unit-label">(分)</span>:</label>
         <input type="number" id="MMSE" value="28" class="input-field">
       </div>
       
       <div class="input-group">
-        <label class="block text-sm font-medium text-gray-700 mb-1" for="VFT">VFT:</label>
+        <label class="block text-sm font-medium text-gray-700 mb-1" for="VFT">VFT <span class="unit-label">(分)</span>:</label>
         <input type="number" id="VFT" value="14" class="input-field">
       </div>
       
       <div class="input-group">
-        <label class="block text-sm font-medium text-gray-700 mb-1" for="DPN">DPN:</label>
-        <input type="number" id="DPN" value="0" class="input-field">
+        <label class="block text-sm font-medium text-gray-700 mb-1" for="DPN">DPN <span class="unit-label">(有=1, 无=0)</span>:</label>
+        <select id="DPN" class="select-field">
+          <option value="0">否 (NO)</option>
+          <option value="1">是 (YES)</option>
+        </select>
       </div>
       
       <div class="flex space-x-4 mt-6">
@@ -82,6 +103,10 @@
 
     <div class="mt-6 text-xs text-gray-500">
       <p>注：MCI (轻度认知障碍) 风险评估基于多项认知测试指标计算。</p>
+      <p class="mt-1">AACT: α1-抗胰蛋白酶复合物测试</p>
+      <p>MMSE: 简易精神状态检查量表</p>
+      <p>VFT: 语言流畅性测试</p>
+      <p>DPN: 抑郁症状 (有/无)</p>
     </div>
   </div>
 
@@ -91,7 +116,7 @@
     const AACT = parseFloat(document.getElementById('AACT').value);
     const MMSE = parseFloat(document.getElementById('MMSE').value);
     const VFT = parseFloat(document.getElementById('VFT').value);
-    const DPN = parseFloat(document.getElementById('DPN').value);
+    const DPN = parseInt(document.getElementById('DPN').value);
 
     // 验证输入
     if (isNaN(AACT) || isNaN(MMSE) || isNaN(VFT) || isNaN(DPN)) {
