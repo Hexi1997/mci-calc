@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="header">
+    <text class="title">MCI 风险计算器</text>
+  </view>
+  <view class="divider"></view>
+  
+  <view class="form">
+    <view class="form-item">
+      <view class="label">AACT <text class="unit">(mg/mL)</text>:</view>
+      <input type="digit" value="{{AACT}}" bindinput="onAACTInput" class="input-field"/>
+    </view>
+    
+    <view class="form-item">
+      <view class="label">MMSE <text class="unit">(分)</text>:</view>
+      <input type="digit" value="{{MMSE}}" bindinput="onMMSEInput" class="input-field"/>
+    </view>
+    
+    <view class="form-item">
+      <view class="label">VFT <text class="unit">(分)</text>:</view>
+      <input type="digit" value="{{VFT}}" bindinput="onVFTInput" class="input-field"/>
+    </view>
+    
+    <view class="form-item">
+      <view class="label">DPN <text class="unit">(有=1, 无=0)</text>:</view>
+      <picker bindchange="onDPNChange" value="{{DPNIndex}}" range="{{DPNOptions}}">
+        <view class="picker">{{DPNOptions[DPNIndex]}}</view>
+      </picker>
+    </view>
+    
+    <view class="button-group">
+      <button class="calculate-btn" bindtap="calculateRisk">计算风险</button>
+      <button class="reset-btn" bindtap="resetForm">重置</button>
+    </view>
+  </view>
+  
+  <view class="result" wx:if="{{showResult}}">
+    <view class="result-title">计算结果</view>
+    <view class="result-content {{riskClass}}">
+      <text>MCI风险概率: {{probability}}%</text>
+    </view>
+    <view class="risk-level {{riskClass}}">
+      <text>风险等级: {{riskLevel}}</text>
+    </view>
+  </view>
+
+  <view class="notes">
+    <text>注：MCI (轻度认知障碍) 风险评估基于多项认知测试指标计算。</text>
+    <text>AACT: α1-抗胰蛋白酶复合物测试</text>
+    <text>MMSE: 简易精神状态检查量表</text>
+    <text>VFT: 语言流畅性测试</text>
+    <text>DPN: 抑郁症状 (有/无)</text>
+  </view>
+</view> 

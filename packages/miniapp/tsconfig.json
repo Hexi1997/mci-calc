@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./miniprogram/*"]
+    },
+    "typeRoots": [
+      "./node_modules/miniprogram-api-typings"
+    ]
+  },
+  "include": [
+    "./miniprogram/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+} 

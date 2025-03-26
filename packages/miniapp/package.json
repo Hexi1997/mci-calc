@@ -1,0 +1,16 @@
+{
+  "name": "@mci-calc/miniapp",
+  "version": "1.0.0",
+  "description": "微信小程序版本的MCI计算器",
+  "scripts": {
+    "dev": "miniprogram-ci preview --pp ./miniprogram --pkp ./private.key",
+    "build": "miniprogram-ci upload --pp ./miniprogram --pkp ./private.key"
+  },
+  "dependencies": {
+    "miniprogram-api-typings": "^3.12.2"
+  },
+  "devDependencies": {
+    "miniprogram-ci": "^1.9.8",
+    "typescript": "^5.3.3"
+  }
+} 

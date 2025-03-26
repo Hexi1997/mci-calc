@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:h5": "pnpm --filter h5 dev",
     "build:h5": "pnpm --filter h5 build",
-    "preview:h5": "pnpm --filter h5 preview"
+    "preview:h5": "pnpm --filter h5 preview",
+    "dev:miniapp": "pnpm --filter @mci-calc/miniapp dev",
+    "build:miniapp": "pnpm --filter @mci-calc/miniapp build"
   },
   "keywords": [],
   "author": "",
